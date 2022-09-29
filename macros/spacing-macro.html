@@ -1,0 +1,23 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{%- macro padding(topSize, bottomSize) -%}
+	padding-top: {{topSize}}px; padding-bottom: {{bottomSize}}px;
+{%- endmacro -%}
+
+{%- macro margin(topSize, bottomSize) -%}
+	margin-top: {{topSize}}px; margin-bottom: {{bottomSize}}px;
+{%- endmacro -%}
+
+{%- macro background(type, color, image) -%}
+	{% if %}
+		background-image: url({{image}});
+	{% else %}
+		background-color: {{color}};
+	{% endif %}
+{%- endmacro -%}
+
+{%- macro textColor(color) -%}
+	color: {{color}};
+{%- endmacro -%}

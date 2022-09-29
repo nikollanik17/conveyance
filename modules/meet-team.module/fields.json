@@ -1,0 +1,201 @@
+[ {
+  "id" : "658a9aa5-2a68-b780-dd3a-bb599e8325fe",
+  "name" : "department_sections",
+  "display_width" : null,
+  "label" : "Department sections",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "0c2513d7-6ef1-e95e-3be2-9bbdcf72c6cf",
+    "name" : "team_members",
+    "display_width" : null,
+    "label" : "Team members",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "37b4ae4b-e37d-b341-da15-f7d1e6eab59d",
+      "name" : "image_field",
+      "display_width" : null,
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Kristine%20Jacobson.png",
+        "alt" : "Kristine Jacobson",
+        "loading" : "lazy",
+        "width" : 361,
+        "height" : 520,
+        "max_width" : 361,
+        "max_height" : 520
+      }
+    }, {
+      "id" : "b92889f9-2642-3fa7-673c-b41d4c51ac4b",
+      "name" : "name_field",
+      "display_width" : null,
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Kristine Jacobson"
+    }, {
+      "id" : "fd383d68-8a1f-bbc7-1662-a0aad02eb649",
+      "name" : "role",
+      "display_width" : null,
+      "label" : "Role",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "CEO"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Kristine%20Jacobson.png",
+        "alt" : "Kristine Jacobson",
+        "loading" : "lazy",
+        "width" : 361,
+        "height" : 520,
+        "max_width" : 361,
+        "max_height" : 520
+      },
+      "name_field" : "Kristine Jacobson",
+      "role" : "CEO"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "team_members" : {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Kristine%20Jacobson.png",
+        "alt" : "Kristine Jacobson",
+        "loading" : "lazy",
+        "width" : 361,
+        "height" : 520,
+        "max_width" : 361,
+        "max_height" : 520
+      },
+      "name_field" : "Kristine Jacobson",
+      "role" : "CEO"
+    }
+  }
+}, {
+  "id" : "e59994b8-ed4a-c967-79ef-91e6f9a3aae9",
+  "name" : "module_background",
+  "display_width" : null,
+  "label" : "Module Background",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "791a4176-fcb7-d1da-a910-dbec40214987",
+  "name" : "module_text_color",
+  "display_width" : null,
+  "label" : "Module Text Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "55a41352-c576-db1a-cd09-a5ca019501fa",
+  "name" : "padding",
+  "display_width" : null,
+  "label" : "Padding",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bc41ece4-f31f-a906-2576-1d515045263d",
+    "name" : "padding_top",
+    "display_width" : null,
+    "label" : "Padding Top",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  }, {
+    "id" : "729fcb85-b91b-2d9e-38de-73ce715455ef",
+    "name" : "padding_bottom",
+    "display_width" : null,
+    "label" : "Padding Bottom",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "c46c387a-3498-fb54-9773-42bc84821fc1",
+  "name" : "margin",
+  "display_width" : null,
+  "label" : "Margin",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "779595f6-b2ce-8204-c488-4fdb42124007",
+    "name" : "margin_top",
+    "display_width" : null,
+    "label" : "Margin Top",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : -100
+  }, {
+    "id" : "8d6d8f67-5c5a-12c0-e5b5-3094b6c6fba8",
+    "name" : "margin_bottom",
+    "display_width" : null,
+    "label" : "Margin Bottom",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "margin_top" : -100
+  }
+} ]

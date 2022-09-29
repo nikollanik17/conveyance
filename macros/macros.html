@@ -1,0 +1,27 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{%- macro padding(topSize, bottomSize) -%}
+	padding-top: {{topSize}}px; padding-bottom: {{bottomSize}}px;
+{%- endmacro -%}
+
+{%- macro margin(topSize, bottomSize) -%}
+	margin-top: {{topSize}}px; margin-bottom: {{bottomSize}}px;
+{%- endmacro -%}
+
+{%- macro background(type, color, image) -%}
+	{% if type == 'image' %}
+		background-image: url({{image}});
+	{% else %}
+  {% if color %}
+		background-color: {{color}};
+  {% endif %}
+	{% endif %}
+{%- endmacro -%}
+
+{%- macro textColor(color) -%}
+  {% if color %}
+	color: {{color}};
+  {% endif %}
+{%- endmacro -%}

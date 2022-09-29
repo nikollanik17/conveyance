@@ -1,0 +1,74 @@
+[ {
+  "id" : "ef7e24da-fda9-383f-8ac5-fce8932de4d2",
+  "name" : "featured_blog",
+  "display_width" : null,
+  "label" : "Featured Blog",
+  "required" : false,
+  "locked" : false,
+  "type" : "page",
+  "default" : 83767361615
+}, {
+  "id" : "08dd1db5-fdaf-2065-238d-52590a6aa8c0",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Blogs"
+}, {
+  "id" : "28398396-525c-694a-1b96-e66dc1658b5e",
+  "name" : "description",
+  "display_width" : null,
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "4ee1690a-ac87-7ad4-a4b9-f3e003827729",
+  "name" : "listing_background",
+  "display_width" : null,
+  "label" : "Listing Background",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "e55e8ce0-b9e1-9e82-f750-4d45c708e714",
+  "name" : "module_text_color",
+  "display_width" : null,
+  "label" : "Module Text Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "0218fc66-1c6a-14a1-08f8-7654f81ecd1f",
+  "name" : "tags",
+  "display_width" : null,
+  "label" : "Tags",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "tag_value" : "ALL",
+  "type" : "tag",
+  "default" : {
+    "id" : 6048285898,
+    "name" : "Branding",
+    "slug" : "branding"
+  }
+} ]

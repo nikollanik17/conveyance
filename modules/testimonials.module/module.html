@@ -1,0 +1,36 @@
+<section class="testimonials">
+  <div class="container">
+    <div class="underline-holder">
+      <h2 class="underlined-heading right-underline">{{module.heading}}</h2>
+    </div>
+  </div>
+  <div class="testimonials__wrapper" style="color: {{ module.module_text_color.color }}; ">
+    {# <svg width="1434" height="570" viewBox="0 0 1434 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1433.5 309.222C824.3 -19.1778 224 -22.2778 0 17.2222V569.723H1433.5V309.222Z" fill="{{ module.swoosh_color.color }}"/>
+    </svg> #}
+    <div class="container">
+      <div class="swiper-container testimonials__slider">
+        <div class="swiper-wrapper">
+          {% for item in module.list %}
+          <div class="swiper-slide testimonials__slide">
+            <div class="testimonials__item" style="color: {{ module.module_text_color.color }}">
+              <div class="testimonials__text">{{ item.text_field }}</div>
+              <div class="testimonials__author">- {{ item.author }}</div>
+              <div class="testimonials__role">{{ item.role }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+{% require_css %}
+  <style>
+    .testimonials__wrapper {
+      background-image: url("{{ module.swoosh_image.src }}");
+    }
+  </style>
+{% end_require_css %}

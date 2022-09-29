@@ -1,0 +1,123 @@
+.blog-listing {
+  padding: 60px 0;
+
+  .blog-posts__grid-feature__item {
+    margin-bottom: 60px;
+  }
+
+  .categories {
+    border-radius: 4px;
+    border: 1px solid #888;
+    padding: 9px 15px;
+    margin-bottom: 40px;
+    width: 200px;
+    position: relative;
+    &__placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      svg {
+        margin-left: 25px;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    &__dropdown {
+      display: none;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      margin: 12px 0;
+      display: block;
+
+      &:first-of-type {
+        margin-top: 20px;
+      }
+    }
+
+    &.active {
+      .categories__dropdown {
+        display: block;
+      }
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 39px;
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__blogs {
+    margin-top: 80px;
+  }
+
+  &__blog {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    margin-bottom: 73px;
+
+    img {
+      height: 320px;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 32px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 16px;
+    }
+
+    &__link {
+      font-size: 16px;
+      line-height: 135.94%;
+      color: inherit;
+    }
+  }
+}
+
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    background: #ffffff;
+    border: 1px solid #dfe3e8;
+    border-radius: 4px;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #212b36;
+
+    &.disabled {
+      background: #919eab;
+      pointer-events: none;
+      border: 1px solid #919eab;
+    }
+
+    &.active {
+      border: 1px solid #4200ff;
+      color: #4200ff;
+    }
+  }
+}

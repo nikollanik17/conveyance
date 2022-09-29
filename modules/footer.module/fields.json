@@ -1,0 +1,154 @@
+[ {
+  "id" : "b10473f0-65d4-1615-bcb4-ae0f353b1959",
+  "name" : "logo",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Conveyance%20Logo.png",
+    "alt" : "Conveyance Logo",
+    "width" : 374,
+    "height" : 86,
+    "max_width" : 374,
+    "max_height" : 86
+  }
+}, {
+  "id" : "dc1afbd7-cf20-19e0-1195-cff7c04edb5d",
+  "name" : "description",
+  "display_width" : null,
+  "label" : "Description",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "default" : "<h6>Conveyance Marketing Group is a Northern Virginia and DC-Metro outsourced digital marketing firm. Our team of innovative and talented veteran marketers take the time to understand your business, your services, and your target audience in order to cost-effectively develop and implement marketing initiatives to attract qualified leads, build customer engagement anwd generate new business. We believe that your success is our success too.</h6>\n<p>&nbsp;</p>"
+}, {
+  "id" : "955b165a-986b-adf5-71c6-310c5724dbf3",
+  "name" : "social_links",
+  "display_width" : null,
+  "label" : "Social Links",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "33956b2e-ac49-4930-37c3-bf8e5c55197f",
+    "name" : "social_icon",
+    "display_width" : null,
+    "label" : "Social Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "c8b5fda6-ebb1-ab03-9e05-06bbe75b582e",
+    "name" : "social_url",
+    "display_width" : null,
+    "label" : "Social URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "social_icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "social_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "9b23080c-6d35-3579-ffe7-71a682e7f4b1",
+  "name" : "menu_1",
+  "display_width" : null,
+  "label" : "Menu 1",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu"
+}, {
+  "id" : "49dc1c36-00c2-06af-91f7-dc327c390409",
+  "name" : "menu_2",
+  "display_width" : null,
+  "label" : "Menu 2",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu"
+}, {
+  "id" : "899850d1-0dd8-45be-343c-410b2daaffe9",
+  "name" : "background_color",
+  "display_width" : null,
+  "label" : "Module Background Color",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#085870",
+    "opacity" : 100
+  }
+}, {
+  "id" : "1408e57f-c2f3-8f40-5cc4-e1b2bb0e186d",
+  "name" : "module_text_color",
+  "display_width" : null,
+  "label" : "Module Text Color",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "22253388-c5fc-d4f7-049f-2994b55e217a",
+  "name" : "swoosh_color_1",
+  "display_width" : null,
+  "label" : "Swoosh Color 1",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#085870",
+    "opacity" : 100
+  }
+}, {
+  "id" : "4351256f-aae6-f952-7cab-a930c80a7dd8",
+  "name" : "swoosh_color_2",
+  "display_width" : null,
+  "label" : "Swoosh Color 2",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#6e8b9a",
+    "opacity" : 100
+  }
+} ]

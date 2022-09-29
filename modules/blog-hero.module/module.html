@@ -1,0 +1,29 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+<section class="hero type-row blog-hero" style="background-color:{{ module.background_color.color }};{{macros.padding(module.padding.padding_top, module.padding.padding_bottom)}}{{macros.margin(module.margin.margin_top, module.margin.margin_bottom)}}{{macros.textColor(module.module_text_color.color)}}">
+  <div class="container">
+    <div class="hero__cols{{ module.flip_columns_on_desktop ? ' order-reverse' : ''}}">
+      <div class="hero__text-col">
+        <div class="hero__meta">{{content.publish_date|unixtimestamp|datetimeformat('%m-%d-%Y')}} / {{ content.blog_post_author.display_name }}</div>
+        {% if module.heading %} 
+          {% set title = module.heading %} 
+        {% else %} 
+          {% set title = content.name %} 
+        {% endif %}
+        <div class="heading hero__heading h1">{{ title }}</div>
+        {% if module.description %}
+        <div class="description hero__description">{{ module.description }}</div>
+        {% endif %}
+      </div>
+      <div class="hero__img-col">
+        {% set image = content.featured_image %} 
+        {% if(module.image.src) %} 
+          {% set image = module.image.src %} 
+        {% endif %}
+        <div class="hero__img-holder">
+          <img src="{{ image }}" alt="Blog" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

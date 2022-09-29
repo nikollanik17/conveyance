@@ -1,0 +1,45 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+<div class="content-form" style="background-color:{{ module.background_color.color }};{{macros.padding(module.padding.padding_top, module.padding.padding_bottom)}}{{macros.margin(module.margin.margin_top, module.margin.margin_bottom)}}{{macros.textColor(module.module_text_color.color)}}">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="content-form__content">
+          {% if module.heading_tag %}
+          <{{ module.heading_tag }} class="heading content-form__heading {{ module.heading_size }}">{{ module.heading }}</{{ module.heading_tag }}>
+          {% endif %}
+          {% if module.subheading and module.subheading_tag %}
+          <{{ module.subheading_tag }} class="subheading content-form__subheading {{ module.subheading_size }}">{{ module.subheading }}</{{ module.subheading_tag }}>
+          {% endif %}
+          <div class="description content-form__description">{{ module.description }}</div>
+          {% if module.display_author %}
+          <div class="content-form__author-description">
+            {{ module.author.author_description }}
+          </div>
+          <div class="content-form__author">
+            {% if module.author.author_image.src %}
+            <img src="{{ module.author.author_image.src }}" alt="{{ module.author.author_image.alt }}" />
+            {% endif %}
+            <div class="content-form__author__text">{{ module.author.author_text }}</div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="content-form__form" style="background-color: {{ module.form_background.color }}">
+          {% if module.form_heading_tag %}
+          <{{ module.form_heading_tag }} class="content-form__form-title {{ module.form_heading_size }}">{{ module.form_title }}</{{ module.form_heading_tag }}>
+          {% endif %}
+          {% form
+            form_to_use="{{ module.form_field.form_id }}"
+            response_response_type="{{ module.form_field.response_type }}"
+            response_message="{{ module.form_field.message }}"
+            response_redirect_id="{{ module.form_field.redirect_id }}"
+            response_redirect_url="{{module.form_field.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

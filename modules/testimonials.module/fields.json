@@ -1,0 +1,104 @@
+[ {
+  "id" : "df77b9ec-4e24-805f-cfdc-5ceb05bc6bbe",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "WHAT CLIENTS SAY"
+}, {
+  "id" : "c439c1ab-c6e8-80c2-b38b-3b05e3f4f88f",
+  "name" : "swoosh_image",
+  "display_width" : null,
+  "label" : "Swoosh Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Main%20Swoop%201.png",
+    "alt" : "Main Swoop 1",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 576,
+    "max_width" : 1440,
+    "max_height" : 576
+  }
+}, {
+  "id" : "81f0df62-9bc6-8eb0-2a6e-4beb79ea835c",
+  "name" : "module_text_color",
+  "display_width" : null,
+  "label" : "Module Text Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "983eff9f-3d0f-4224-513d-d762f12ae934",
+  "name" : "list",
+  "display_width" : null,
+  "label" : "List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "7aa87345-7b9c-ae5c-01be-248f50000414",
+    "name" : "text_field",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "\"It is an absolute delight to work with Conveyance. Their team is professional, highly responsive, and incredibly organized. They had to interface with many of our internal executives and handled every situation with the highest level of professionalism. We appreciate everything the Conveyance team has done for us!\""
+  }, {
+    "id" : "b115d981-7d8c-b53d-2e45-09c20d2a42c3",
+    "name" : "author",
+    "display_width" : null,
+    "label" : "Author",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Justine Seidel"
+  }, {
+    "id" : "fda389ab-5563-76b7-fb6b-0bf73ec4db46",
+    "name" : "role",
+    "display_width" : null,
+    "label" : "Role",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Senior Digital Marketing Manager, Navex Global"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text_field" : "\"It is an absolute delight to work with Conveyance. Their team is professional, highly responsive, and incredibly organized. They had to interface with many of our internal executives and handled every situation with the highest level of professionalism. We appreciate everything the Conveyance team has done for us!\"",
+    "author" : "Justine Seidel",
+    "role" : "Senior Digital Marketing Manager, Navex Global"
+  }
+} ]

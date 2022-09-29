@@ -1,0 +1,93 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+<section class="blog-listing" style="background-color: {{ module.listing_background.color }};{{macros.textColor(module.module_text_color.color)}}">
+  <div class="container">
+    {% set featuredBlog = content_by_id(module.featured_blog) %}
+    {% if featuredBlog %}
+    <div class="blog-posts__grid-feature__item index-1">
+      <img src="{{featuredBlog.featured_image}}" alt="{{featuredBlog.title}}" />
+      <div class="blog-posts__grid-feature__content">
+        <div class="blog-posts__grid-feature__title">{{featuredBlog.title}}</div>
+        <div class="blog-posts__grid-feature__description">{{ featuredBlog.meta_description }}</div>
+
+        <a href="{{ featuredBlog.absolute_url }}" class="blog-posts__grid-feature__link">
+          Read more
+        </a>
+      </div>
+    </div>
+    {% endif %}
+    {% if module.heading %}
+    <div class="blog-listing__heading heading h1">{{ module.heading }}</div>
+    {% endif %}
+    {% if module.description %}
+    <div class="blog-listing__description description">{{ module.description }}</div>
+    {% endif %}
+    <div class="categories">
+      <div class="categories__placeholder">Categories <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></div>
+      <div class="categories__dropdown">
+      <a href="/{{group.slug}}">All</a>
+      {% for item in module.tags %}
+      <a href="{{ blog_tag_url(group.id, item.slug) }}" class="categories__item">{{ item.name }} </a>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="blog-listing__blogs">
+      <div class="row">
+      {% for row in contents %}
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="blog-listing__blog">
+            <a href="{{ row.absolute_url }}">
+              <img src="{{row.featured_image}}" alt="{{row.title}}" />
+            </a>
+            <div class="blog-listing__blog__title">{{row.title}}</div>
+            <a class="blog-listing__blog__link" href="{{ row.absolute_url }}">Learn more</a>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+    
+     <div class="blog-pagination">
+      {% set page_list = [-2, -1, 0, 1, 2] %}
+      {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+      {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+      {% elif current_page_num == 2 %}{% set offset = 1 %}
+      {% elif current_page_num == 1 %}{% set offset = 2 %}
+      {% else %}{% set offset = 0 %}{% endif %}
+
+      <div class="blog-pagination__container blog-pagination__left">
+        <a class="prev-link{{!last_page_num ? ' disabled' : ''}}" href="{{ blog_page_link(last_page_num) }}">
+          <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.16 1.41L3.58 6L8.16 10.59L6.75 12L0.750004 6L6.75 0L8.16 1.41Z" fill="#C4CDD5"/>
+          </svg>
+        </a>
+        {% if contents.total_page_count > 5 %}
+          {% if current_page_num >= 4 %}
+              <a href="{{ blog_page_link(1) }}">1</a>
+              <a class="elipses" href="{% if current_page_num <= 5 %}{{ blog_page_link(1) }}{% else %}{{ blog_page_link(current_page_num - 5) }}{% endif %}">...</a>
+          {% endif %}
+        {% endif %}
+      </div>
+       <div class="blog-pagination__container blog-pagination__center">
+         {% for page in page_list %}
+         {% set this_page = current_page_num + page + offset %}
+         {% if this_page > 0 and this_page <= contents.total_page_count %}
+         <a {% if this_page == current_page_num %}class="active"{% endif %} href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+         {% endif %}
+         {% endfor %}
+       </div>
+       <div class="blog-pagination__container blog-pagination__right">
+         {% if contents.total_page_count > 5 %}
+         {% if contents.total_page_count - current_page_num > 2 %}
+         <a class="elipses" href="{% if contents.total_page_count - current_page_num <= 5 %}{{ contents.total_page_count }}{% else %}{{ blog_page_link(current_page_num + 5) }}{% endif %}">...</a>
+         <a href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
+         {% endif %}
+         {% endif %}
+         <a class="next-link{{!next_page_num ? ' disabled' : ''}}" href="{{ blog_page_link(current_page_num + 1) }}"><svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.84 1.41L5.42 6L0.84 10.59L2.25 12L8.25 6L2.25 0L0.84 1.41Z" fill="#C4CDD5"/>
+          </svg>
+        </a>
+       </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+<section class="features type-default order-{{ module.order }}" style="{{macros.padding(module.padding.padding_top, module.padding.padding_bottom)}}{{macros.margin(module.margin.margin_top, module.margin.margin_bottom)}}{{macros.textColor(module.module_text_color.color)}}{{macros.background(module.module_background.background_type, module.module_background.background_color.color, module.module_background.background_image.src)}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="features__content">
+          {% if module.heading_tag %}
+          <{{ module.heading_tag }} class="heading features__heading {{ module.heading_size }}">{{ module.heading }}</{{ module.heading_tag }}>
+          {% endif %}
+          {% if module.subheading and module.subheading_tag %}
+          <{{ module.subheading_tag }} class="subheading features__subheading {{ module.subheading_size }}">{{ module.subheading }}</{{ module.subheading_tag }}>
+          {% endif %}
+          <div class="description features__description">{{ module.description }}</div>
+          {% if module.rows|first %}
+          <ul>
+            {% for item in module.rows %}
+              {% if item %}
+              <li>{{item}}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if module.button_1.text_field or module.button_2.text_field %}
+          <div class="features__buttons buttons-holder">
+            {% if module.button_1.text_field and module.button_1.url_field.href %}
+            <a class="button features__button btn-{{ module.button_1.button_type ? module.button_1.button_type : 'contain' }} btn-{{ module.button_1.button_color ? module.button_1.button_color : 'primary' }}" href="{{ module.button_1.url_field.href }}">
+              {{ module.button_1.text_field }}
+            </a>
+            {% endif %}
+            {% if module.button_2.text_field and module.button_2.url_field.href %}
+            <a class="button features__button btn-{{ module.button_2.button_type ? module.button_2.button_type : 'contain' }} btn-{{ module.button_2.button_color ? module.button_2.button_color : 'primary'}}" href="{{ module.button_2.url_field.href }}">
+              {{ module.button_2.text_field }}
+            </a>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="features__box">
+          {% if module.box_title %}
+          <div class="features__box__title">{{module.box_title}}</div>
+          {% endif %}
+          {% if module.box_description %}
+          <div class="features__box__description">{{module.box_description}}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

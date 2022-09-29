@@ -1,0 +1,97 @@
+[ {
+  "id" : "a504e7c5-41bd-8b4f-076a-ccdb5cf95fe9",
+  "name" : "pill_position",
+  "display_width" : null,
+  "label" : "Pill Position",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "fixed-right", "Float bottom right" ], [ "fixed-left", "Float Bottom left" ], [ "absolute-right", "Above footer bottom right" ], [ "absolute-left", "Above footer bottom left" ] ],
+  "type" : "choice",
+  "default" : "fixed-right"
+}, {
+  "id" : "73957bfa-3f2d-1a62-ed52-ec518fa7b5bd",
+  "name" : "content_type",
+  "display_width" : null,
+  "label" : "Content Type",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "BLOG POST"
+}, {
+  "id" : "fc14c735-1f00-c51a-7234-32f8891bfe99",
+  "name" : "use_date",
+  "display_width" : null,
+  "label" : "Use Date",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "e05a7aac-2bab-207a-a4b5-b3695ac33cd5",
+  "name" : "date",
+  "display_width" : null,
+  "label" : "Date",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "fc14c735-1f00-c51a-7234-32f8891bfe99",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "date",
+  "default" : 1662436800000
+}, {
+  "id" : "b7a224b1-9ea8-025e-26cb-15af84146ee8",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "The SMB Market and How You Can Expand Your Market Shares  Through Through Through"
+}, {
+  "id" : "2a8e53a1-0541-08e8-2824-8e091af5d2c9",
+  "name" : "image_field",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/20220729-CMG-IG-August-%23Remoteworklife2.png",
+    "alt" : "20220729-CMG-IG-August-#Remoteworklife2",
+    "loading" : "lazy",
+    "width" : 1080,
+    "height" : 1080,
+    "max_width" : 1080,
+    "max_height" : 1080
+  }
+}, {
+  "id" : "3de53ecc-4b24-0057-3c84-980c3b5b5985",
+  "name" : "url_field",
+  "display_width" : null,
+  "label" : "URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+  "type" : "url",
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
+  }
+} ]

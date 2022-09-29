@@ -1,0 +1,168 @@
+[ {
+  "id" : "87f85127-6e0d-c2ec-aeb3-cc8680ac9077",
+  "name" : "logo",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8137035.fs1.hubspotusercontent-na1.net/hubfs/8137035/Logo%20(1).svg",
+    "alt" : "Logo (1)",
+    "loading" : "lazy",
+    "width" : 75,
+    "height" : 18,
+    "max_width" : 75,
+    "max_height" : 18
+  }
+}, {
+  "id" : "7846dd37-e186-3c05-d0a0-60aa554ab00c",
+  "name" : "turn_off_sticky_header",
+  "display_width" : null,
+  "label" : "Turn Off Sticky Header",
+  "required" : false,
+  "locked" : true,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "a2f37b9c-59d2-6026-dbb5-b88c98e91c62",
+  "name" : "menu_field",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu"
+}, {
+  "id" : "d2eb2529-3811-4550-0d4c-dc29375f1a99",
+  "name" : "button",
+  "display_width" : null,
+  "label" : "Button",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "390d5a2a-28e6-51b8-f878-7435988e500b",
+    "name" : "url_field",
+    "display_width" : null,
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "e3d6fcaf-b613-25d3-f85f-8c71303d8882",
+    "name" : "text_field",
+    "display_width" : null,
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "a64c5eb2-45d1-2978-667c-d51390332c03",
+    "name" : "button_type",
+    "display_width" : null,
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "contain", "Contain" ], [ "outline", "Outline" ] ],
+    "type" : "choice",
+    "default" : "contain"
+  }, {
+    "id" : "804486d5-0643-d9f4-47b2-73438637bf34",
+    "name" : "button_color",
+    "display_width" : null,
+    "label" : "Button Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "tertiary", "Tertiary" ] ],
+    "type" : "choice",
+    "default" : "primary"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "button_type" : "contain",
+    "button_color" : "primary"
+  }
+}, {
+  "id" : "539daa29-c692-7bfc-b838-a0aae63d967f",
+  "name" : "links_color",
+  "display_width" : null,
+  "label" : "Links Color",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : null,
+    "opacity" : null
+  }
+}, {
+  "id" : "e8c98ee8-6886-efef-e10d-a26a0a5e74a0",
+  "name" : "background_color",
+  "display_width" : null,
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "1107b181-0b9f-901d-eb69-16100c5e9f59",
+  "name" : "padding",
+  "display_width" : null,
+  "label" : "Padding",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "da02c3c5-c724-ea54-8752-c8f8b7fa8820",
+    "name" : "padding_top",
+    "display_width" : null,
+    "label" : "Padding Top",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 16
+  }, {
+    "id" : "db6eb7f8-53b8-8c2a-fbff-0d838c242cc4",
+    "name" : "padding_bottom",
+    "display_width" : null,
+    "label" : "Padding Bottom",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 16
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "padding_top" : 16,
+    "padding_bottom" : 16
+  }
+} ]

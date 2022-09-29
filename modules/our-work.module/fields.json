@@ -1,0 +1,181 @@
+[ {
+  "id" : "7d6dd000-a433-7ce2-9193-8c6dd4866a8d",
+  "name" : "module_type",
+  "display_width" : null,
+  "label" : "Module Type",
+  "inline_help_text" : "If module type grid is selected items MUST have length divisible by 2 so grid can be full width",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "slider", "Slider" ], [ "grid", "Grid" ] ],
+  "type" : "choice"
+}, {
+  "id" : "6334b52a-5330-03a4-d132-777d6d8b9565",
+  "name" : "case_studies",
+  "display_width" : null,
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "76c64e5c-cf53-9eec-825c-81cc2fa94b81",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Marcella_Case-Study-768x512.jpeg",
+      "alt" : "Marcella_Case-Study-768x512",
+      "loading" : "lazy",
+      "width" : 768,
+      "height" : 512,
+      "max_width" : 768,
+      "max_height" : 512
+    }
+  }, {
+    "id" : "4caad9a3-a866-23a2-8859-417735ab94ae",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#29445f",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "73e4e444-03d0-0c82-d43a-83384fdbdf5e",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Topic",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "SEM"
+  }, {
+    "id" : "ec34e05e-523b-db55-a6dc-e00525bbb833",
+    "name" : "title_color",
+    "display_width" : null,
+    "label" : "Topic Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#497D9E",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "b755d29d-7ab4-cdfa-87ea-ac660c457602",
+    "name" : "title_field",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Magical Brands Case Study"
+  }, {
+    "id" : "3cf58f13-d295-c1c3-7b9f-104f857eb097",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Add3’s media team maximized bottom-of-the-funnel targeting tactics to reach aggressive goals in a cost-effective way. "
+  }, {
+    "id" : "6be422f4-1917-7bf0-37e7-a98b78e1bfbe",
+    "name" : "url_field",
+    "display_width" : null,
+    "label" : "Link URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "#!",
+      "content_id" : null
+    }
+  }, {
+    "id" : "f40b0b1e-5654-996d-844c-63321ef8b20d",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "CHECK IT OUT"
+  }, {
+    "id" : "8df1c297-1ea6-886f-fd8d-721c18723b15",
+    "name" : "button_color",
+    "display_width" : null,
+    "label" : "Link Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#FAAA55",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://4231556.fs1.hubspotusercontent-na1.net/hubfs/4231556/Marcella_Case-Study-768x512.jpeg",
+      "alt" : "Marcella_Case-Study-768x512",
+      "loading" : "lazy",
+      "width" : 768,
+      "height" : 512,
+      "max_width" : 768,
+      "max_height" : 512
+    },
+    "background_color" : {
+      "color" : "#29445f",
+      "opacity" : 100
+    },
+    "title" : "SEM",
+    "title_color" : {
+      "color" : "#497D9E",
+      "opacity" : 100
+    },
+    "title_field" : "Magical Brands Case Study",
+    "description" : "Add3’s media team maximized bottom-of-the-funnel targeting tactics to reach aggressive goals in a cost-effective way. ",
+    "url_field" : {
+      "type" : "EXTERNAL",
+      "href" : "#!",
+      "content_id" : null
+    },
+    "button_text" : "CHECK IT OUT",
+    "button_color" : {
+      "color" : "#FAAA55",
+      "opacity" : 100
+    }
+  }
+} ]

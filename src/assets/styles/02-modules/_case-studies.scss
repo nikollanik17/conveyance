@@ -1,0 +1,242 @@
+.case-study {
+  $el: &;
+  position: relative;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+
+    #{$el} {
+      &__slide {
+        &:nth-child(4n + 3),
+        &:nth-child(4n + 4) {
+          flex-direction: row-reverse;
+        }
+        img {
+          width: 100%;
+          min-height: 280px;
+          height: 100%;
+        }
+      }
+
+      &__image-holder {
+        width: 50%;
+      }
+
+      &__content {
+        width: 50%;
+      }
+    }
+  }
+
+  &__slider {
+    padding: 0 9% !important;
+
+    &::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 9%;
+      height: 100%;
+      background-color: #28445f;
+      opacity: 0.75;
+      z-index: 2;
+    }
+
+    &::after {
+      content: "" !important;
+      position: absolute !important;
+      top: 0 !important;
+      right: 0 !important;
+      width: 9%;
+      height: 100%;
+      background-color: #28445f;
+      opacity: 0.75;
+      z-index: 2;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    background-color: #29445f;
+
+    img {
+      height: 300px;
+      width: 340px;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: 21px 21px 21px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__body {
+    margin-bottom: 20px;
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 15px;
+      line-height: 1.1;
+      font-weight: bold;
+      color: #fff;
+      font-size: 26px;
+    }
+    p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    font-size: 21px;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .slider-arrow {
+    position: absolute;
+    top: 0;
+    left: calc(9% - 54px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a3147;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 4;
+    svg {
+      width: 30px;
+      height: 30px;
+      path {
+        fill: #fff;
+      }
+    }
+
+    &.slider-arrow-next {
+      left: auto;
+      right: calc(9% - 54px);
+    }
+  }
+
+  &__button {
+    font-size: 18px;
+    transition: 250ms opacity ease;
+    font-size: 19px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: breakpoint(xl)) {
+  .case-study {
+    &__slider {
+      padding: 0 54px !important;
+      &::before {
+        width: 0;
+      }
+
+      &::after {
+        width: 0;
+      }
+    }
+    &__slide {
+      img {
+        height: 300px;
+        width: 280px;
+        object-fit: cover;
+      }
+    }
+
+    .slider-arrow {
+      left: 0;
+      &.slider-arrow-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: breakpoint(md)) {
+  .case-study {
+    $el: &;
+    &__grid {
+      grid-template-columns: 1fr;
+
+      #{$el} {
+        &__slide {
+          flex-direction: row !important;
+          &:nth-child(2n) {
+            flex-direction: row-reverse !important;
+          }
+          img {
+            width: 100%;
+            min-height: 280px;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &__slider {
+      padding: 0 37px !important;
+    }
+    &__slide {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+    }
+    .slider-arrow {
+      padding: 8px;
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: breakpoint(sm)) {
+  .case-study {
+    $el: &;
+    &__grid {
+      grid-template-columns: 1fr;
+
+      #{$el} {
+        &__slide {
+          flex-direction: column !important;
+
+          &:nth-child(2n) {
+            flex-direction: column !important;
+          }
+          img {
+            width: 100%;
+            min-height: auto;
+            height: 270px;
+          }
+        }
+
+        &__content,
+        &__image-holder {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

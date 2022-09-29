@@ -1,0 +1,54 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+{% if module.use_swoosh and module.add_all_content_in_swoosh %}
+<svg class="top-svg{{ module.flip_columns_on_desktop ? ' reverse-svg' : ''}}" width="1314" height="89" viewBox="0 0 1314 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1314 3V31.3273C678.5 27.7319 960 19.2319 0 71.2327V54.2326C539 -12.2675 1069.45 -0.143955 1314 3Z" fill="{{ module.swoosh_color_2.color ? module.swoosh_color_2.color : '#e0e0e0' }}"/>
+  <path d="M0 88.2315V71.2319C685.5 11.7314 1045.71 29.8413 1314 30.9003V88.2315L0 88.2315Z" fill="{{ module.swoosh_color_1.color ? module.swoosh_color_1.color : '#BBB' }}" />
+</svg>
+{% endif %}
+<section class="split-column-feature{{ module.use_line_on_subheading ? ' type-line' : '' }}{{ module.add_all_content_in_swoosh and module.use_swoosh ? ' all-in-swoosh' : '' }}" style="background-color: {{ module.background_color.color }};{{macros.padding(module.padding.padding_top, module.padding.padding_bottom)}}{{macros.margin(module.margin.margin_top, module.margin.margin_bottom)}}{{macros.textColor(module.module_text_color.color)}}">
+  {% if module.use_swoosh and !module.add_all_content_in_swoosh %}
+  <svg class="bg-svg{{ module.flip_columns_on_desktop ? ' reverse-svg' : ''}}" width="1444" height="347" viewBox="0 0 1444 347" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 346.03V199.53C447.6 61.9303 1149.17 29.8637 1444 31.0303V346.03H0Z" fill="{{ module.swoosh_color_1.color ? module.swoosh_color_1.color : '#BBB' }}"/>
+  <path d="M1443.5 0.158902L1444 31.5C751.5 33.2344 194.5 135 0 200.5V168.159C464.4 27.3589 1155.83 -2.50776 1443.5 0.158902Z" fill="{{ module.swoosh_color_2.color ? module.swoosh_color_2.color : '#e0e0e0' }}"/>
+  </svg>
+  {% endif %}
+  <div class="container">
+    {% if module.heading and module.heading_tag %}
+    <{{ module.heading_tag }} class="heading split-column-feature__heading {{ module.heading_size }}">{{ module.heading }}</{{ module.heading_tag }}>
+    {% endif %}
+    <div class="split-column-feature__cols{{ module.flip_columns_on_desktop ? ' order-reverse' : ''}}">
+      <div class="split-column-feature__text-col">
+        
+        {% if module.subheading and module.subheading_tag %}
+        <{{ module.subheading_tag }} class="subheading split-column-feature__subheading {{ module.subheading_size }}{{ module.use_line_on_subheading ? ' has-line' : '' }}">{{ module.subheading }}</{{ module.subheading_tag }}>
+        {% endif %}
+        {% if module.description %}
+        <div class="description split-column-feature__description">{{ module.description }}</div>
+        {% endif %}
+        <div class="split-column-feature__buttons buttons-holder">
+          {% if module.button_1.text_field and module.button_1.url_field.href  %}
+          <a class="button split-column-feature__button btn-{{ module.button_1.button_type ? module.button_1.button_type : 'contain' }} btn-{{ module.button_1.button_color ? module.button_1.button_color : 'primary' }}" href="{{ module.button_1.url_field.href }}">
+            {{ module.button_1.text_field }}
+          </a>
+          {% endif %}
+          {% if module.button_2.text_field and module.button_2.url_field.href %}
+          <a class="button split-column-feature__button btn-{{ module.button_2.button_type ? module.button_2.button_type : 'contain' }} btn-{{ module.button_2.button_color ? module.button_2.button_color : 'primary' }}" href="{{ module.button_2.url_field.href }}">
+            {{ module.button_2.text_field }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="split-column-feature__img-col">
+        {% if module.image_field.src %}
+          <div class="split-column-feature__img-holder">
+          <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% require_css %}
+{% end_require_css %}

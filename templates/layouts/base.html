@@ -1,0 +1,134 @@
+<!--
+  templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title %}<title>{{ page_meta.html_title }}</title>{% endif %}
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {{ require_css(get_asset_url("../../build/assets/css/main.css")) }}
+		{{ require_css("https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.css") }}
+    {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {{ standard_header_includes }}
+
+    {{ require_js("https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js", "head") }}
+    {{ require_js("https://cdn.jsdelivr.net/combine/npm/gsap@3.6.1,npm/gsap@3.6.1/dist/CSSRulePlugin.min.js,npm/gsap@3.6.1/dist/ScrollTrigger.min.js,npm/gsap@3.6.1/dist/ScrollToPlugin.min.js,npm/gsap@3.6.1/dist/TextPlugin.min.js", "head") }}
+		{{ require_js("https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js", "head") }}
+
+    <style>
+      body {
+        background: {{ theme.global_colors.background_color.css }};
+        color: {{ theme.global_colors.text_color.css }};
+      }
+
+      .color-primary {
+        color: {{ theme.global_colors.primary.css }};
+      }
+
+      .color-secondary {
+        color: {{ theme.global_colors.secondary.css }};
+      }
+
+      .color-tertiary {
+        color: {{ theme.global_colors.tertiary.css }};
+      }
+
+      .button {
+        padding: {{ theme.buttons.padding_y }}px {{ theme.buttons.padding_x }}px;
+        font-weight: 400;
+        font-size: {{ theme.buttons.font_size }}px;
+        line-height: 1.2;
+        border-radius: {{ theme.buttons.border_radius }}px;
+        transition: 250ms background ease, 250ms color ease;
+        display: block;
+        width: max-content;
+      }
+      
+      {# CONTAINED BUTTONS #}
+      .button.btn-primary {
+        border: 1px solid {{ theme.global_colors.primary.css }};
+        color: {{ theme.buttons.text_color.css }};
+        background: {{ theme.global_colors.primary.css }};
+      }
+      .button.btn-contain.btn-primary:hover {
+        background: transparent;
+        color: {{ theme.global_colors.primary.css }};
+      }
+
+      .button.btn-secondary {
+        border: 1px solid {{ theme.global_colors.secondary.css }};
+        color: {{ theme.buttons.text_color.css }};
+        background: {{ theme.global_colors.secondary.css }};
+      }
+      .button.btn-secondary:hover {
+        background: transparent;
+        color: {{ theme.global_colors.secondary.css }};
+      }
+
+      .button.btn-tertiary {
+        border: 1px solid {{ theme.global_colors.tertiary.css }};
+        color: {{ theme.buttons.text_color.css }};
+        background: {{ theme.global_colors.tertiary.css }};
+      }
+      .button.btn-tertiary:hover {
+        background: transparent;
+        color: {{ theme.global_colors.tertiary.css }};
+      }
+      {# OUTLINED BUTTONS #}
+      .button.btn-outline {
+        background: transparent;
+        border: 1px solid {{ theme.global_colors.primary.css }};
+        color: {{ theme.global_colors.primary.css }};
+      }
+
+      .button.btn-outline.btn-primary {
+        border: 1px solid {{ theme.global_colors.primary.css }};
+        color: {{ theme.global_colors.primary.css }};
+      }
+      .button.btn-outline.btn-primary:hover {
+        background: {{ theme.global_colors.primary.css }};
+        color: {{ theme.buttons.text_color.css }};
+      }
+
+      .button.btn-outline.btn-secondary {
+        border: 1px solid {{ theme.global_colors.secondary.css }};
+        color: {{ theme.global_colors.secondary.css }};
+      }
+      .button.btn-outline.btn-secondary:hover {
+        background: {{ theme.global_colors.secondary.css }};
+        color: {{ theme.buttons.text_color.css }};
+      }
+
+      .button.btn-outline.btn-tertiary {
+        border: 1px solid {{ theme.global_colors.tertiary.css }};
+        color: {{ theme.global_colors.tertiary.css }};
+      }
+      .button.btn-outline.btn-tertiary:hover {
+        background: {{ theme.global_colors.tertiary.css }};
+        color: {{ theme.buttons.text_color.css }};
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }}">
+      {% block header %}
+        {% module 'header' path='../../modules/header' %}
+      {% endblock %}
+		
+      {% block body %}
+				
+      {% endblock body %}
+
+      {% block footer %}
+        {% module 'footer' path='../../modules/footer' %}
+      {% endblock %}
+
+    </div>
+    {{ require_js(get_asset_url('../../build/assets/js/main.bundle.js')) }}
+    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {{ standard_footer_includes }}
+  </body>
+</html>

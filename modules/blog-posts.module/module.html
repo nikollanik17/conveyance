@@ -1,0 +1,189 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+{% set isTag = false %}
+{% if module.selection_type == 'tag' %}
+  {% set isTag = true %}
+  {% set posts = blog_recent_tag_posts(module.blog_field, module.blog_tag, 4) %}
+{% else if module.selection_type == 'blogs' %}
+  {% set posts = blog_recent_posts(module.blog_field, 4) %}
+{% else %}
+  {% set posts = module.blogs %}
+{% endif %}
+
+<section class="blog-posts" style="background-color: {{module.background_color.color}};{{macros.padding(module.padding.padding_top, module.padding.padding_bottom)}}{{macros.margin(module.margin.margin_top, module.margin.margin_bottom)}}{{macros.textColor(module.module_text_color.color)}}">
+  <div class="container">
+    {% if module.heading_tag %}
+    <{{ module.heading_tag }} class="heading blog-posts__heading {{ module.heading_size }}">{{ module.heading }}</{{ module.heading_tag }}>
+    {% endif %}
+    {% if module.subheading and module.subheading_tag %}
+    <{{ module.subheading_tag }} class="subheading blog-posts__subheading {{ module.subheading_size }}">{{ module.subheading }}</{{ module.subheading_tag }}>
+    {% endif %}
+    <div class="description blog-posts__description">{{ module.description }}</div>
+   
+    
+    {% if module.module_type == 'large-image' or module.module_type == 'cards' %}
+    {% set colDesktop = 'cols-3' %}
+    {% if posts|length % 4 == 0 %}
+      {% set colDesktop = 'cols-4' %}
+    {% endif %}
+      <div class="blog-posts__posts {{colDesktop}}">
+        {% for row in posts %}
+          {% if !isTag %}
+            {% set row = content_by_id(row.id) %}
+          {% endif %}
+          <div class="blog-posts__post type-{{module.module_type}}">
+            <a href="{{ row.absolute_url }}">
+            <img src="{{row.featured_image}}" alt="{{row.title}}" />
+            </a>
+            <div class="blog-posts__post__content">
+              <div class="blog-posts__post__title">{{row.title}}</div>
+              <a class="blog-posts__post__link" href="{{ row.absolute_url }}">
+                Learn more
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="blog-posts__posts-slider swiper-container">
+        <div class="swiper-wrapper">
+        {% for row in posts %}
+          {% if !isTag %}
+            {% set row = content_by_id(row.id) %}
+          {% endif %}
+          <div class="blog-posts__post swiper-slide type-{{module.module_type}}">
+            <a href="{{ row.absolute_url }}">
+            <img src="{{row.featured_image}}" alt="{{row.title}}" />
+            </a>
+            <div class="blog-posts__post__content">
+              <div class="blog-posts__post__title">{{row.title}}</div>
+              <a class="blog-posts__post__link" href="{{ row.absolute_url }}">
+                Learn more
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+    
+    {% if module.module_type == 'grid' %}
+      <div class="blog-posts__grid">
+        {% for row in posts %}
+          {% if !isTag %}
+            {% set row = content_by_id(row.id) %}
+          {% endif %}
+          <a href="{{ row.absolute_url }}" class="blog-posts__grid__item index-{{loop.index}}" style="background-image: url('{{row.featured_image}}')">
+            {% if row.tag_list|first %}
+            <div class="blog-posts__grid__category">{{ row.tag_list|first }}</div>
+            {% endif %}
+            <div class="blog-posts__grid__title">{{row.title}}</div>
+            <div class="blog-posts__grid__author">{{ row.blog_post_author.display_name }}</div>
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="blog-posts__grid-slider swiper-container">
+        <div class="swiper-wrapper">
+        {% for row in posts %}
+          {% if !isTag %}
+            {% set row = content_by_id(row.id) %}
+          {% endif %}
+          <a href="{{ row.absolute_url }}" class="blog-posts__grid__item swiper-slide index-{{loop.index}}" style="background-image: url('{{row.featured_image}}')">
+            {% if row.tag_list|first %}
+            <div class="blog-posts__grid__category">{{ row.tag_list|first }}</div>
+            {% endif %}
+            <div class="blog-posts__grid__title">{{row.title}}</div>
+            <div class="blog-posts__grid__author">{{ row.blog_post_author.display_name }}</div>
+          </a>
+        {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if module.module_type == 'feature' %}
+      <div class="blog-posts__grid-feature">
+        {% for row in posts %}
+          {% if loop.index < 4 %}
+          {% if !isTag %}
+            {% set row = content_by_id(row.id) %}
+          {% endif %}
+          <div class="blog-posts__grid-feature__item index-{{loop.index}}">
+            {% if loop.first %}
+              <img src="{{row.featured_image}}" alt="{{row.title}}" />
+            {% endif %}
+            <div class="blog-posts__grid-feature__content">
+              {% if row.blog_post_author.display_name %}
+                <div class="blog-posts__grid-feature__author">{{ row.blog_post_author.display_name }}</div>
+              {% endif %}
+              <div class="blog-posts__grid-feature__title">{{row.title}}</div>
+              <div class="blog-posts__grid-feature__description">{{ row.meta_description }}</div>
+
+              <a href="{{ row.absolute_url }}" class="blog-posts__grid-feature__link">
+                Read more
+              </a>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+ 
+  {% if module.module_type == 'feature' %}
+  <div class="blog-posts__grid-feature-mobile">
+      {% for row in posts %}
+        {% if loop.index == 1 %}
+          {% if !isTag %}
+            {% set row = content_by_id(row.id) %}
+          {% endif %}
+        <div class="blog-posts__grid-feature__item index-{{loop.index}}">
+          {% if loop.first %}
+            <img src="{{row.featured_image}}" alt="{{row.title}}" />
+          {% endif %}
+          <div class="blog-posts__grid-feature__content">
+            {% if row.blog_post_author.display_name %}
+              <div class="blog-posts__grid-feature__author">{{ row.blog_post_author.display_name }}</div>
+            {% endif %}
+            <div class="blog-posts__grid-feature__title">{{row.title}}</div>
+            <div class="blog-posts__grid-feature__description">{{ row.meta_description }}</div>
+
+            <a href="{{ row.absolute_url }}" class="blog-posts__grid-feature__link">
+              Read more
+            </a>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    <div class="container">
+      <div class="swiper-container blog-posts__grid-feature-slider">
+        <div class="swiper-wrapper">
+        {% for row in posts %}
+          {% if loop.index > 1 %}
+            {% if !isTag %}
+              {% set row = content_by_id(row.id) %}
+            {% endif %}
+          <div class="blog-posts__grid-feature__item swiper-slide index-{{loop.index}}">
+            {% if loop.first %}
+              <img src="{{row.featured_image}}" alt="{{row.title}}" />
+            {% endif %}
+            <div class="blog-posts__grid-feature__content">
+              {% if row.blog_post_author.display_name %}
+                <div class="blog-posts__grid-feature__author">{{ row.blog_post_author.display_name }}</div>
+              {% endif %}
+              <div class="blog-posts__grid-feature__title">{{row.title}}</div>
+              <div class="blog-posts__grid-feature__description">{{ row.meta_description }}</div>
+  
+              <a href="{{ row.absolute_url }}" class="blog-posts__grid-feature__link">
+                Read more
+              </a>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+</section>

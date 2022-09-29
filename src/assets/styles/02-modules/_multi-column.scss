@@ -1,0 +1,265 @@
+.multi-column {
+  $el: &;
+  padding: 91px 0 120px;
+  position: relative;
+
+  .bottom-divider {
+    margin-top: 90px;
+  }
+
+  .bottom-border {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #000;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1380px;
+  }
+
+  &__heading,
+  &__subheading {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__buttons {
+    justify-content: center;
+
+    &.buttons-under {
+      margin-top: 60px;
+    }
+  }
+
+  &__cards {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+    &.cols-image {
+      grid-template-columns: repeat(3, 1fr);
+      &.desktop-2-cols {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        #{$el} {
+          &__card {
+            &__image {
+              height: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    &.cols-classic {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__slider {
+    display: none;
+  }
+
+  &__card {
+    // border-radius: 4px;
+    // padding: 20px;
+    $card: &;
+    display: flex;
+    flex-direction: column;
+
+    &__image-holder {
+      margin-bottom: 16px;
+      &.has-curved-bg {
+        border-radius: 100px 0 0 0;
+        background: #28576e;
+      }
+
+      #{$card} {
+        &__icon,
+        &__image {
+          border-radius: 100px 0 0 0;
+        }
+      }
+    }
+
+    &__icon {
+      width: 100%;
+      height: 315px;
+      object-fit: cover;
+      // margin-bottom: 16px;
+    }
+
+    &__image {
+      width: 100%;
+      height: 130px;
+      object-fit: contain;
+      margin-top: 30px;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+      margin-top: auto;
+    }
+
+    &.align-center {
+      text-align: center;
+      align-items: center;
+
+      .card-content {
+        align-items: center;
+      }
+    }
+
+    &.type-image {
+      &.cards-2-cols {
+        padding: 0;
+        width: 32.3%;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          width: 49.2%;
+        }
+      }
+      .card-content {
+        padding: 24px 50px 24px;
+      }
+    }
+
+    &.type-swoosh {
+      .card-content {
+        margin-top: 0;
+      }
+    }
+
+    &.has-shadow {
+      box-shadow: 0px 16px 27px rgba(66, 66, 66, 0.07);
+      transition: 250ms box-shadow ease(fluid);
+
+      &:hover {
+        box-shadow: 0px 20px 32px rgba(66, 66, 66, 0.125929);
+      }
+    }
+
+    &.has-swoosh {
+      border-radius: 100px 0 0 0;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+      width: 100%;
+
+      &.swoosh-heading {
+        width: 100%;
+        border-radius: 100px 0 0 0;
+        padding: 40px 20px 20px;
+        text-align: right;
+      }
+    }
+
+    &__subtitle {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      margin-bottom: 30px;
+      padding: 10px 22px;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+      * {
+        line-height: 1.5;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          opacity: 0.5;
+          margin-bottom: 5px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 32px;
+        }
+      }
+    }
+
+    &__button {
+      margin: 0 auto;
+      margin-top: auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: breakpoint(xl)) {
+  .multi-column {
+    &__card {
+      &.type-image {
+        &.cards-2-cols {
+          padding: 0;
+          width: 31.5%;
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            width: 48.2%;
+          }
+        }
+        .card-content {
+          padding: 24px 50px 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: breakpoint(lg)) {
+  .multi-column {
+    &__cards {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    &__card {
+      &.type-image {
+        &.cards-2-cols {
+          padding: 0;
+          // width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: breakpoint(md)) {
+  .multi-column {
+    padding: 60px 0;
+    &__cards {
+      display: none !important;
+    }
+    &__slider {
+      display: block;
+    }
+
+    &__card {
+      width: 300px !important;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.top-svg {
+  width: 100%;
+  height: auto;
+  margin-bottom: -6px;
+
+  // &.reverse-svg {
+  //   transform: rotateY(180deg);
+  // }
+}
+
+.split-column-feature {
+  $el: &;
+  position: relative;
+  padding: 100px 0;
+
+  &.all-in-swoosh {
+    padding: 20px 0 50px;
+  }
+
+  &.type-line {
+    overflow-x: hidden;
+  }
+
+  .bg-svg {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &.reverse-svg {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  &__subheading {
+    margin-bottom: 20px;
+    position: relative;
+
+    &.has-line {
+      &::after {
+        content: "";
+        display: block;
+        background-color: #f1a059;
+        height: 3px;
+        width: 9999px;
+        right: 101%;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+      }
+    }
+  }
+
+  &__description {
+    * {
+      line-height: 1.5;
+    }
+  }
+
+  &__text-col {
+    width: 60%;
+    padding-right: 35px;
+  }
+
+  &__img-col {
+    width: 40%;
+    padding-left: 35px;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      width: auto;
+      height: 400px;
+    }
+  }
+
+  &__cols {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.order-reverse {
+      flex-direction: row-reverse;
+      #{$el} {
+        &__subheading {
+          &::after {
+            right: auto;
+            left: 101%;
+          }
+        }
+        &__text-col {
+          padding-right: 0;
+          padding-left: 35px;
+          text-align: right;
+        }
+
+        &__img-col {
+          padding-left: 0;
+          padding-right: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: breakpoint(mb)) {
+  .split-column-feature {
+    &__heading {
+      margin-bottom: 50px;
+    }
+    &__cols {
+      flex-direction: column !important;
+    }
+    &__text-col {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-bottom: 30px;
+    }
+
+    &__img-col {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      text-align: center;
+    }
+  }
+}

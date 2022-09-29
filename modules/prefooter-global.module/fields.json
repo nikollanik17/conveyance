@@ -1,0 +1,35 @@
+[ {
+  "id" : "ab66c1b5-c1a6-853e-dd27-c0f4d1b3f458",
+  "name" : "flip_columns_on_dekstop",
+  "display_width" : null,
+  "label" : "Flip Columns On Dekstop",
+  "required" : false,
+  "locked" : true,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "6eb841b8-27fd-b1ad-7560-9860af89583c",
+  "name" : "swoosh_color_1",
+  "display_width" : null,
+  "label" : "Swoosh Color 1",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#bbb",
+    "opacity" : 100
+  }
+}, {
+  "id" : "3bbd9cf0-b3da-bc6a-98e8-2079ad92cb95",
+  "name" : "swoosh_color_2",
+  "display_width" : null,
+  "label" : "Swoosh Color 2",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "default" : {
+    "color" : "#e0e0e0",
+    "opacity" : 100
+  }
+} ]

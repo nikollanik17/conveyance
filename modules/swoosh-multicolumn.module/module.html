@@ -1,0 +1,110 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+<section class="multi-column swoosh-multi" style="background-color:{{ module.background_color.color }};{{macros.padding(module.padding.padding_top, module.padding.padding_bottom)}}{{macros.margin(module.margin.margin_top, module.margin.margin_bottom)}}{{macros.textColor(module.module_text_color.color)}}">
+  <div class="container">
+    {% if module.text_content_position == 'top' %}
+      {% if module.heading_tag %}
+      <{{ module.heading_tag }} class="heading multi-column__heading {{ module.heading_size }}">{{ module.heading }}</{{ module.heading_tag }}>
+      {% endif %}
+      {% if module.subheading and module.subheading_tag %}
+      <{{ module.subheading_tag }} class="subheading multi-column__subheading {{ module.subheading_size }}">{{ module.subheading }}</{{ module.subheading_tag }}>
+      {% endif %}
+      <div class="description multi-column__description">{{ module.description }}</div>
+      {% if (module.button_1.text_field or module.button_2.text_field) %}
+      <div class="multi-column__buttons buttons-holder">
+        {% if module.button_1.text_field and module.button_1.url_field.href %}
+        <a class="button multi-column__button btn-{{ module.button_1.button_type }} btn-{{ module.button_1.button_color ? module.button_1.button_color : 'primary' }}" href="{{ module.button_1.url_field.href }}">
+          {{ module.button_1.text_field }}
+        </a>
+        {% endif %}
+        {% if module.button_2.text_field and module.button_2.url_field.href %}
+        <a class="button multi-column__button btn-{{ module.button_2.button_type }} btn-{{ module.button_2.button_color ? module.button_2.button_color : 'primary' }}" href="{{ module.button_2.url_field.href }}">
+          {{ module.button_2.text_field }}
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    {% endif %}
+    <div class="multi-column__cards cols-classic">
+      {% for item in module.cards %}
+      {% set itemTag = 'div' %}
+      {% if item.make_entire_item_clickable %}
+        {% set itemTag = 'a' %}
+      {% endif %}
+      <{{itemTag}}
+        href="{{item.item_url.href}}"  
+        class="multi-column__card type-swoosh" 
+      >
+        <div class="card-content" >
+          {% if item.headline_tag %}
+          <{{ item.headline_tag }} class="multi-column__card__title swoosh-heading {{ item.headline_size }}" style="color: {{module.headline_color.color}}; background-color: {{ module.card_background.color }}">{{ item.title }}</{{ item.headline_tag }}>
+          {% endif %}
+          <div class="multi-column__card__description" style="color: {{ module.card_text_color.color }}">{{ item.description }}</div>
+          {% if item.card_button.text_field and item.card_button.url_field.href and !item.make_entire_item_clickable %}
+          <a class="button multi-column__card__button btn-{{ item.card_button.button_type }}" href="{{ item.card_button.url_field.href }}">
+            {{ item.card_button.text_field }}
+          </a>
+          {% endif %}
+        </div>
+      </{{itemTag}}>
+      {% endfor %}
+    </div>
+    {# SLIDER #}
+    <div class="swiper-container multi-column__slider">
+      <div class="swiper-wrapper">
+      {% for item in module.cards %}
+      {% set itemTag = 'div' %}
+      {% if item.make_entire_item_clickable %}
+        {% set itemTag = 'a' %}
+      {% endif %}
+      <{{itemTag}}
+        href="{{item.item_url.href}}" 
+        class="multi-column__card swiper-slide type-swoosh" 
+      >
+        <div class="card-content">
+          {% if item.headline_tag %}
+          <{{ item.headline_tag }} class="multi-column__card__title swoosh-heading {{ item.headline_size }}" style="color: {{module.headline_color.color}}; background-color: {{ module.card_background.color }}">{{ item.title }}</{{ item.headline_tag }}>
+          {% endif %}
+          <div class="multi-column__card__description" style="color: {{ module.card_text_color.color }}">{{ item.description }}</div>
+          {% if item.card_button.text_field and item.card_button.url_field.href and !item.make_entire_item_clickable %}
+          <a class="button multi-column__card__button btn-{{ item.card_button.button_type }} btn-{{ item.card_button.button_color ? item.card_button.button_color : 'primary' }}" href="{{ item.card_button.url_field.href }}">
+            {{ item.card_button.text_field }}
+          </a>
+          {% endif %}
+        </div>
+      </{{itemTag}}>
+      {% endfor %}
+      </div>
+    </div>
+
+    {% if module.text_content_position == 'bottom' %}
+      <div class="bottom-divider"></div>
+      {% if module.heading_tag %}
+      <{{ module.heading_tag }} class="heading multi-column__heading swoosh-heading {{ module.heading_size }}">{{ module.heading }}</{{ module.heading_tag }}>
+      {% endif %}
+      {% if module.subheading and module.subheading_tag %}
+      <{{ module.subheading_tag }} class="subheading multi-column__subheading {{ module.subheading_size }}">{{ module.subheading }}</{{ module.subheading_tag }}>
+      {% endif %}
+      <div class="description multi-column__description">{{ module.description }}</div>
+      {% if (module.button_1.text_field or module.button_2.text_field) %}
+      <div class="multi-column__buttons buttons-holder">
+        {% if module.button_1.text_field and module.button_1.url_field.href %}
+        <a class="button multi-column__button btn-{{ module.button_1.button_type }} btn-{{ module.button_1.button_color ? module.button_1.button_color : 'primary' }}" href="{{ module.button_1.url_field.href }}">
+          {{ module.button_1.text_field }}
+        </a>
+        {% endif %}
+        {% if module.button_2.text_field and module.button_2.url_field.href %}
+        <a class="button multi-column__button btn-{{ module.button_2.button_type }} btn-{{ module.button_2.button_color ? module.button_2.button_color : 'primary' }}" href="{{ module.button_2.url_field.href }}">
+          {{ module.button_2.text_field }}
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    {% endif %}
+
+    {% if module.use_border_bottom %}
+      <!-- HTML to show when checked -->
+      <div class="bottom-border" style="border-color: {{module.module_text_color.color}}"></div>
+    {% endif %}
+  </div>
+</section>

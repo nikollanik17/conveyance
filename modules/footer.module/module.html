@@ -1,0 +1,45 @@
+{% import '/conveyance/macros/macros.html' as macros %}
+
+<svg class="top-svg" width="1444" height="212" viewBox="0 0 1444 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 212V199.53C447.6 61.9303 1149.17 29.8637 1444 31.0303V212H0Z" fill="{{ module.swoosh_color_1.color ? module.swoosh_color_1.color : '#BBB' }}" />
+  <path d="M1444 0.500286V31.5001C751.5 33.2345 194.5 135 0 200.5V168.159C464.4 27.359 1156.33 -2.16638 1444 0.500286Z" fill="{{ module.swoosh_color_2.color ? module.swoosh_color_2.color : '#e0e0e0' }}" />
+</svg>
+<footer class="footer" style="background-color: {{module.background_color.color}};{{macros.textColor(module.module_text_color.color)}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="/" class="footer__logo">
+          {% if module.logo.src %}
+          <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
+          {% endif %}
+        </a>
+        {% if module.social_links|length > 0 %}
+        <div class="footer__social">
+          {% for item in module.social_links %}
+          {% if item.social_icon.src %}
+          <a class="footer__social-link" href="{{ item.social_url.href }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ item.social_icon.src }}" alt="{{ item.social_icon.alt }}" />
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-6">
+        <div class="footer__description">{{ module.description }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__menus-holder">
+    <div class="container">
+      <div class="footer__menus">
+        <div class="footer__menu menu-1">
+          {% menu id="{{ module.menu_1 }}" %}
+        </div>
+        <div class="footer__menu menu-2">
+          {% menu id="{{ module.menu_2 }}" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
